@@ -3,14 +3,14 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class AnimatedSprite : MonoBehaviour
 {
-    public SpriteRenderer SpriteRenderer { get; private set; }
+    public SpriteRenderer spriteRenderer { get; private set; }
     public Sprite[] sprites;
     public float animationTime = 0.25f;
     public int animationFrame { get; private set; }
     public bool loop = true;
 
     private void Awake() {
-        this.SpriteRenderer = GetComponent<SpriteRenderer>();
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start() {
@@ -19,7 +19,7 @@ public class AnimatedSprite : MonoBehaviour
 
     private void Advance() {
 
-        if (!this.SpriteRenderer.enabled) {
+        if (!this.spriteRenderer.enabled) {
             return;
         }
 
@@ -30,7 +30,7 @@ public class AnimatedSprite : MonoBehaviour
         }
 
         if (this.animationFrame >= 0 && this.animationFrame < this.sprites.Length) {
-            this.SpriteRenderer.sprite = this.sprites[this.animationFrame];
+            this.spriteRenderer.sprite = this.sprites[this.animationFrame];
         }
     }
 

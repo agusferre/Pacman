@@ -33,7 +33,6 @@ public class Ghost : MonoBehaviour
         if (this.home != this.initialBehaviour) {
             this.home.Disable();
         }
-
         if (this.initialBehaviour != null) {
             this.initialBehaviour.Enable();
         }
